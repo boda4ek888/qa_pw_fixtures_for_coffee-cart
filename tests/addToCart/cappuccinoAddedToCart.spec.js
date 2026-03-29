@@ -16,5 +16,3 @@ test('Check Cappuccino correctly added to the Cart',
   await cartPage.assertCappuccinoTotalCostContainsCorrectText(
     COFFEE_PRICES.cappuccino);
 });
-
-//check only addToCart tests

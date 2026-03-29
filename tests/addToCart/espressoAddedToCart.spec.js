@@ -15,5 +15,3 @@ test('Check Espresso correctly added to the Cart',
   await cartPage.assertEspressoTotalCostContainsCorrectText(
     COFFEE_PRICES.espresso);
 });
-
-//check only addToCart tests

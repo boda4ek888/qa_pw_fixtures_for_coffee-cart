@@ -136,7 +136,10 @@ export class CartPage {
   }
 
   async assertDiscountedMochaTotalCostContainsCorrectText(text) {
-    await expect(this.discountedMochaTotalCost).toContainText(text); 
+    const discountedMochaTotalCost = priceFormatStr(text)
+
+    await expect(this.discountedMochaTotalCost)
+      .toContainText(discountedMochaTotalCost);
   }
 
   async assertAmericanoItemIsVisible() {
@@ -144,7 +147,9 @@ export class CartPage {
   }
 
   async assertAmericanoTotalCostContainsCorrectText(text) {
-    await expect(this.americanoTotalCost).toContainText(text); 
+    const americanoTotalCost = priceFormatStr(text)
+
+    await expect(this.americanoTotalCost).toContainText(americanoTotalCost);
   }
 
   async assertNoCoffeeMessageIsVisible() {
@@ -152,6 +157,8 @@ export class CartPage {
   }
 
   async assertTotalCheckoutContainsValue(value) {
-    await expect(this.totalCheckout).toContainText(value); 
+    const totalCheckout = totalPriceFormatStr(value)
+
+    await expect(this.totalCheckout).toContainText(totalCheckout);
   }
 }
