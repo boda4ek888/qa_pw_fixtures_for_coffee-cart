@@ -34,3 +34,6 @@
 2. Push the code to the origin.
 3. Create PR for your changes.
 4. Fix all the suggestions from the code review until PR is approved.
+
+Everything is done.
+
