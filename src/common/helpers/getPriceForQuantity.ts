@@ -7,6 +7,7 @@ export function priceFormatStr(unitPrice: number): string {
 }
 
 export function totalPriceFormatStr(totalPrice: number): string {
+  //It's ok to get totalPrice parameter
   return `Total: $${totalPrice.toFixed(2)}`;
 }
 

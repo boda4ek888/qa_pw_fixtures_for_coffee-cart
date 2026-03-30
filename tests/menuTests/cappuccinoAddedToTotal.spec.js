@@ -1,4 +1,5 @@
 import { test } from '../fixtures/fixtures';
+import { COFFEE_PRICES } from '../../src/constants/constants';
 
 test('Check Cappuccino cost is added to Total on menu page',
   async ({ menuPage}) => {
@@ -6,5 +7,5 @@ test('Check Cappuccino cost is added to Total on menu page',
   await menuPage.open();
   await menuPage.clickCappucinoCup();
 
-  await menuPage.assertTotalCheckoutContainsValue(19);
+  await menuPage.assertTotalCheckoutContainsValue(COFFEE_PRICES.cappuccino);
 });

@@ -1,4 +1,5 @@
 import { test } from '../fixtures/fixtures';
+import { COFFEE_PRICES } from '../../src/constants/constants';
 
 test('Assert discounted Mocha added to the Cart after promo accepting',
   async ({ menuPage, cartPage
@@ -16,8 +17,12 @@ test('Assert discounted Mocha added to the Cart after promo accepting',
   await menuPage.clickCartLink();
   await cartPage.waitForLoading();
 
-  await cartPage.assertEspressoTotalCostContainsCorrectText(10);
-  await cartPage.assertDiscountedMochaTotalCostContainsCorrectText(4);
-  await cartPage.assertCappuccinoTotalCostContainsCorrectText(19);
-  await cartPage.assertAmericanoTotalCostContainsCorrectText(7);
+  await cartPage.assertEspressoTotalCostContainsCorrectText(
+    COFFEE_PRICES.espresso);
+  await cartPage.assertDiscountedMochaTotalCostContainsCorrectText(
+    COFFEE_PRICES.discountedMocha);
+  await cartPage.assertCappuccinoTotalCostContainsCorrectText(
+    COFFEE_PRICES.cappuccino);
+  await cartPage.assertAmericanoTotalCostContainsCorrectText(
+    COFFEE_PRICES.americano);
 });
